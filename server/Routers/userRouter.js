@@ -12,7 +12,7 @@ router.post("/signup", async (req, res) => {
       req.body;
 
     if (password !== corretcionPassword)
-      return res.status(400).json({ message: "Passwords do not match" });
+      return res.status(400).json({ message: "Parolalar uyuşmuyor" });
 
     const userExists = await User.findOne({ email });
     if (userExists)
@@ -30,7 +30,7 @@ router.post("/signup", async (req, res) => {
     return res.status(201).json(createdUser);
   } catch (error) {
     console.log(error);
-    return res.json({ message: "Create user failed" });
+    return res.json({ message: "Kullanıcı oluşturma başarısız" });
   }
 });
 router.post("/signin", async (req, res) => {
@@ -38,13 +38,14 @@ router.post("/signin", async (req, res) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
 
-    if (!user) return res.status(400).json({ message: "User does not exists" });
+    if (!user)
+      return res.status(400).json({ message: "Kullanıcı mevcut değil" });
 
     const isPasswordCorrect = await bcrypt.compare(password, user.password);
     if (!isPasswordCorrect)
-      return res.status(400).json({ message: "Wrong Password" });
+      return res.status(400).json({ message: "Yanlış Parola" });
 
-    return res.status(200).json({ user, message: "Authentication successful" });
+    return res.status(200).json({ user, message: "Kimlik Doğrulama Başarılı" });
   } catch (error) {
     return res.status(200).json({ message: error.message });
   }

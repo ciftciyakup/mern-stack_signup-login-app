@@ -68,6 +68,19 @@ Modern **MongoDB, Express.js, React.js ve Node.js** (MERN Stack) teknolojileriyl
 
 ---
 
+## 📸 Proje Ekran Görüntüleri
+
+### Kayıt Ol
+<img src="https://github.com/ciftciyakup/mern-stack_authentication-app/blob/main/project-images/signup.png" alt="Kayıt Ol" height="400"/>
+
+### Giriş Yap
+<img src="https://github.com/ciftciyakup/mern-stack_authentication-app/blob/main/project-images/signin.png" alt="Giriş Yap" height="400"/>
+
+### Anasayfa
+<img src="https://github.com/ciftciyakup/mern-stack_authentication-app/blob/main/project-images/home.png" alt="Anasayfa" height="400"/>
+
+---
+
 ## 🚀 Kurulum
 
 ### Ön Koşullar
